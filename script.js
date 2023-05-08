@@ -12,18 +12,31 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  // openingHours: {
+  //   thu: {
+  //     open: 12,
+  //     close: 22,
+  //   },
+  //   fri: {
+  //     open: 11,
+  //     close: 23,
+  //   },
+  //   sat: {
+  //     open: 0, // Open 24 hours
+  //     close: 24,
+  //   },
+  // },
 };
+
+// 1- Récupérer les éléments d'un tableau
+// soit un tableau simple
+const arr = [1, 2, 3];
+
+// méthode classique
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+// méthode rapide
+const [x, y, z] = arr;
+console.log(x, y, z);
