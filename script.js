@@ -12,6 +12,9 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  }
   // openingHours: {
   //   thu: {
   //     open: 12,
@@ -37,6 +40,29 @@ const a = arr[0];
 const b = arr[1];
 const c = arr[2];
 
-// méthode rapide
+// méthode rapide : déstructuration
 const [x, y, z] = arr;
 console.log(x, y, z);
+
+// 2- Récupérer des éléments d'un tableau dans un objet
+// les deux premiers
+const [first, second] = restaurant.categories;
+// le premier et le troisième
+const [premier, , troisieme] = restaurant.categories;
+
+// 3- Changer la place des éléments
+let [main, , secondary] = restaurant.categories;
+
+// méthode classique
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+
+// destructuring
+[main, secondary] = [secondary, main];
+console.log(main, secondary); 
+
+// 4- avec inclusion d'une fonction
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
