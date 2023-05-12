@@ -14,23 +14,35 @@ const restaurant = {
 
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  }
-  // openingHours: {
-  //   thu: {
-  //     open: 12,
-  //     close: 22,
-  //   },
-  //   fri: {
-  //     open: 11,
-  //     close: 23,
-  //   },
-  //   sat: {
-  //     open: 0, // Open 24 hours
-  //     close: 24,
-  //   },
-  // },
+  },
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    adress,
+  }) {
+    console.log(
+      `Order received! ${starterIndex} blabla ${mainIndex} blabla ${time} blabla ${adress}`
+    );
+  },
+  
 };
-
+////////////////////////////////
+// I- Déstructuration de tableaux
 // 1- Récupérer les éléments d'un tableau
 // soit un tableau simple
 const arr = [1, 2, 3];
@@ -60,9 +72,70 @@ let [main, , secondary] = restaurant.categories;
 
 // destructuring
 [main, secondary] = [secondary, main];
-console.log(main, secondary); 
+console.log(main, secondary);
 
 // 4- avec inclusion d'une fonction
 const [starter, mainCourse] = restaurant.order(2, 0);
 console.log(starter, mainCourse);
 
+// 5- tableau imbriqué (nested array)
+// const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+// 6- valeurs par défaut
+const [p = 1, q = 2, r = 3] = [1, 2];
+console.log(p, q, r);
+
+////////////////////////////////
+// II- Destructuration d'objets
+
+// 1- déstructuration d'objet
+const { nam, openingHours, categories } = restaurant;
+console.log(nam, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// 2- valeurs par défaut
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console(menu, starters);
+
+// 3- remplacement d'un élément par un autre
+let aa = 111;
+let bb = 999;
+const obj = { aa: 23, bb: 7, cc: 14 };
+({ aa, bb } = obj);
+console.log(aa, bb);
+
+// 4- nested object
+const {
+  fri: { open: o, close: cl },
+} = openingHours;
+console.log(o, cl);
+
+// 5 - avec une fonction
+restaurant.orderDelivery({
+  time: '22:30',
+  adress: { rue },
+  mainIndex: 2,
+  starterIndex: 3,
+});
+
+////////////////////////////////////////////////////////////////
+// III - Spread Operator
+
+const arr2 = [7, 8, 9];
+// Mauvaise méthode
+const badNewArray = [1, 2, arr2[0], arr2[1], arr2[2]];
+// Bonne méthode
+const newArr = [1, 2, ...arr2];
+console.log(...newArr);
+
+// Création d'un nouveau tableau
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
