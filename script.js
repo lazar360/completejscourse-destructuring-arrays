@@ -46,4 +46,26 @@ const restaurant = {
   },
 };
 
+console.log('------OR----------');
+// renvoie la première valeur non falsy
+// Use any data type and see return : short circuiting
+console.log(3 || 'Nico');
+console.log('' || 'Nico');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Nico' || 23 || null);
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 11;
+console.log(guests2);
+
+console.log('------AND----------');
+// renvoie la première valeur falsy ou la dernière truly
+console.log(0 && 'Nico');
+console.log(7 && 'Nico');
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
 
