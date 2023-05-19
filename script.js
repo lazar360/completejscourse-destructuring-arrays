@@ -46,3 +46,38 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+  name: 'capri',
+  numGuests: 1,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// au lieu de :
+
+rest1.numGuests = rest1.numGuests || 1;
+rest2.numGuests = rest2.numGuests || 1;
+
+// on peut écrire
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+// console.log(rest1);
+// console.log(rest2);
+
+// sauf que ça marche pas lorsque une valeur est définie à 0
+// nullish assigment operator : crée une propriété et assigne une valeur s'il n'y en a pas (propriété et valeur par défaut)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+console.log(rest1);
+console.log(rest2);
+
+// AND assigment operator : assigne une varleur à une variable si elle existe (uniquement valeur par défaut)
+// rest1.owner = rest1.owner && 'ANONYMOUS';
+// rest2.owner = rest2.owner && 'ANONYMOUS';
+rest1.owner &&= 'ANONYMOUS';
+rest2.owner &&= 'ANONYMOUS';
+console.log(rest1);
+console.log(rest2);
