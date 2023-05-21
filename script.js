@@ -4,6 +4,23 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${2 + 4}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -12,22 +29,19 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  // recopier l'objet opening hours et non openingHours = openingHours
+  openingHours,
+
+  // on peut retirer le mot clé function et les ':' c'est-à-dire que :
+  // - Ce qui est écrit en-dessous :
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
+  // - Est la même chose que ça :
+  orderPasta(ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2}and ${ing3}`
+    );
   },
   orderDelivery: function ({
     starterIndex = 1,
@@ -37,11 +51,6 @@ const restaurant = {
   }) {
     console.log(
       `Order received! ${starterIndex} blabla ${mainIndex} blabla ${time} blabla ${adress}`
-    );
-  },
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(
-      `Here is your delicious pasta with ${ing1}, ${ing2}and ${ing3}`
     );
   },
 };
@@ -84,6 +93,7 @@ rest2.numGuests = rest2.numGuests || 1;
 
 ////////////////////////////////
 // for loop
+////////////////////////////////
 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
@@ -92,7 +102,10 @@ for (const item of menu) console.log(item);
 
 // Itérer en montrant l'index
 for (const [i, element] of menu.entries()) {
-  console.log(`${i+1} : ${element}`);
+  console.log(`${i + 1} : ${element}`);
 }
 
+////////////////////////////////
+// optional chaining ?.
+////////////////////////////////
 
