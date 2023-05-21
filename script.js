@@ -108,4 +108,39 @@ for (const [i, element] of menu.entries()) {
 ////////////////////////////////
 // optional chaining ?.
 ////////////////////////////////
+// if (restaurant.openingHours.mon.open) console.log(restaurant.openingHours.mon.open);
+// if (restaurant.openingHours.fri.open) console.log(restaurant.openingHours.fri.open);
+if (restaurant.openingHours.thu.open)
+  console.log(restaurant.openingHours.thu.open);
 
+//console.log(restaurant.openingHours.mon); // résultat attendu : undefined
+
+// if (restaurant.openingHours && restaurant.openingHours.mon)
+//   console.log(restaurant.openingHours.mon);
+
+// WITH optional chaining
+console.log(restaurant.openingHours.mon?.open); // undefined
+console.log(restaurant.openingHours.mon?.open); // undefined
+// console.log(restaurant.openingHours.mon.open); // retourne une erreur
+
+// example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderTruc?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'Nico', email: 'nico@nico.co' }];
+console.log(users[0]?.name);
+console.log(users[1]?.name ?? 'User array empty');
+// pareil que
+if (users.length > 0) console.log(users[0].name);
+else console.log('user array empty');
+// console.log(users[1].name); // retourne une erreur
