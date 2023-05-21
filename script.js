@@ -69,15 +69,30 @@ rest2.numGuests = rest2.numGuests || 1;
 
 // sauf que ça marche pas lorsque une valeur est définie à 0
 // nullish assigment operator : crée une propriété et assigne une valeur s'il n'y en a pas (propriété et valeur par défaut)
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
-console.log(rest1);
-console.log(rest2);
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+// console.log(rest1);
+// console.log(rest2);
 
 // AND assigment operator : assigne une varleur à une variable si elle existe (uniquement valeur par défaut)
 // rest1.owner = rest1.owner && 'ANONYMOUS';
 // rest2.owner = rest2.owner && 'ANONYMOUS';
-rest1.owner &&= 'ANONYMOUS';
-rest2.owner &&= 'ANONYMOUS';
-console.log(rest1);
-console.log(rest2);
+// rest1.owner &&= 'ANONYMOUS';
+// rest2.owner &&= 'ANONYMOUS';
+// console.log(rest1);
+// console.log(rest2);
+
+////////////////////////////////
+// for loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// Itérer sur la propriété
+for (const item of menu) console.log(item);
+
+// Itérer en montrant l'index
+for (const [i, element] of menu.entries()) {
+  console.log(`${i+1} : ${element}`);
+}
+
+
