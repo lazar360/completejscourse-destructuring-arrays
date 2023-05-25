@@ -171,3 +171,13 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key}, we open at ${open} and close at ${close}`);
 }
+
+////////////////////////////////
+// Set
+////////////////////////////////
+
+const orderSet = new Set(['Pasta', 'Pizza', 'Pizza']);
+console.log(orderSet);
+console.log(new Set('Nicolas'));
+console.log(orderSet.has('Pasta')); // renvoie false si pas dedans
+orderSet.add('Pasta'); // ajoute un élémént
