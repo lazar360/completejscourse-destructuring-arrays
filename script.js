@@ -181,3 +181,19 @@ console.log(orderSet);
 console.log(new Set('Nicolas'));
 console.log(orderSet.has('Pasta')); // renvoie false si pas dedans
 orderSet.add('Pasta'); // ajoute un élémént
+orderSet.delete('Pasta'); // supprimer un élémént
+// orderSet.clear(); // vide le set
+
+for (const order of orderSet) console.log(order);
+
+// Example
+const staff = ['waiter', 'chief', 'waiter', 'manager', 'manager'];
+// const staffUnique = new Set(staff);
+// console.log(staffUnique);
+// dédoublonnage staffUnique
+// !!!!!!!!!!!!!!!!!!!!!!!!
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(staffUnique.size);
+
+console.log(new Set('nicolasgautier').size);
