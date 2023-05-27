@@ -232,5 +232,7 @@ console.log(rest.siize);
 const arr = [1, 2];
 // et l'intégrer en clé
 rest.set([1, 2], Test);
+// on peut mettre un query selector dans une map
+rest.set(document.querySelector('h1'), 'Heading');
 
 
