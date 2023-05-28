@@ -235,4 +235,30 @@ rest.set([1, 2], Test);
 // on peut mettre un query selector dans une map
 rest.set(document.querySelector('h1'), 'Heading');
 
+// Autre méthode pour remplir une map
+const question = new Map(
+  ['questions', 'What is the best language'],
+  [1, 'Javascript'],
+  [2, 'Java'],
+  [3, 'C'],
+  [correct, 1],
+  [true, 'Correct'],
+  [false, 'Try again']
+);
 
+// Convertir un objet en map
+const hoursMap = new Map(Object.entries(openingHours));
+
+// Itérer sur une map
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(` Answer ${key} : ${value}`);
+}
+
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// Pour convertir a map to array
+console.log([...question]);
