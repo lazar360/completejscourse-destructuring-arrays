@@ -67,7 +67,7 @@ console.log(airline.length);
 console.log(airline.indexOf('r'));
 console.log(airline.lastIndexOf('r'));
 
-// Extraction
+// Extraction :slice
 console.log(airline.slice(4)); // Air Portugal
 console.log(airline.slice(4, 7)); // Air
 console.log(airline.slice(0, airline.indexOf(' '))); // TAP
@@ -88,3 +88,28 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+
+// ToLowerCase et ToUpperCase
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Eviter les problèmes de case
+const passenger = 'jOnAs';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect = passenger[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing Email
+const email = 'hello@example.com';
+const loginEmail = ' Hello@example.com \n';
+const emailToLower = loginEmail.toLowerCase();
+// const emailWithNoSpace = loginEmail.replace(' ', '');
+const trimmedEmail = emailToLower.trim();
+console.log(trimmedEmail);
+
+const loginEmail2 = ' Hello@example.com \n';
+const normalizedEmail = loginEmail2.toLowerCase().trim();
+console.log(normalizedEmail); 
+
+
+
