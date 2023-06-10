@@ -67,6 +67,12 @@ console.log(airline.length);
 console.log(airline.indexOf('r'));
 console.log(airline.lastIndexOf('r'));
 
-
+// Extraction
+console.log(airline.slice(4)); // Air Portugal
+console.log(airline.slice(4, 7)); // Air
+console.log(airline.slice(0, airline.indexOf(' '))); // TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Portugal
+console.log(airline.slice(-2)); // Compte à partir de la fin
+console.log(airline.slice(1, -1)); 
 
 
