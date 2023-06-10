@@ -55,3 +55,18 @@ const restaurant = {
   },
 };
 
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(plane[0]);
+console.log('B737'[0]);
+console.log(airline.length);
+
+// Methodes avec strings
+////////////////////////////////
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+
+
+
+
