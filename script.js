@@ -73,6 +73,18 @@ console.log(airline.slice(4, 7)); // Air
 console.log(airline.slice(0, airline.indexOf(' '))); // TAP
 console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Portugal
 console.log(airline.slice(-2)); // Compte à partir de la fin
-console.log(airline.slice(1, -1)); 
+console.log(airline.slice(1, -1));
 
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seat
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got a middle seat');
+  } else {
+    console.log('You got lucky');
+  }
+};
 
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
