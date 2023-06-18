@@ -120,3 +120,8 @@ const announcement =
   'All passengers come to boarding door 23. Boarding door 23.';
 const announcement2 = announcement.replace(/door/g, 'gate');
 console.log(announcement2);
+
+// booleans
+const plane2 = 'A320dzdazd';
+console.log(plane2.includes('A320'));
+console.log(plane2.startsWith('A'));
