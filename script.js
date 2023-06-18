@@ -115,3 +115,8 @@ console.log(normalizedEmail);
 const priceGB = '288,97£';
 const priceUS = priceGB.replace(',', '.').replace('£', '$');
 console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23.';
+const announcement2 = announcement.replace(/door/g, 'gate');
+console.log(announcement2);
