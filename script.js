@@ -141,9 +141,23 @@ console.log(plane2.startsWith('A'));
 // checkBaggage('I have a Socks and camera');
 // checkBaggage('I have a Socks and a gun for protection');
 
-// Split and join 
+// Split and join
 console.log('a+very+nice+string'.split('+'));
 const [firstName, lastName] = 'Nicolas Gautier'.split(' ');
 
 const newName = ['Mr', firstName, lastName.toLocaleUpperCase()].join(' ');
 console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+const passenger2 = 'jessica ann smith davis';
+capitalizeName(passenger2);
+capitalizeName('nicolas gautier');
