@@ -125,3 +125,25 @@ console.log(announcement2);
 const plane2 = 'A320dzdazd';
 console.log(plane2.includes('A320'));
 console.log(plane2.startsWith('A'));
+
+// Practice exercise
+
+// const checkBaggage = function (item) {
+//   const baggage = item.toLowerCase();
+//   if(baggage.includes('knife') || baggage.includes('gun')){
+//     console.log('You are NOT ALLOWED in board');
+//   } else {
+//     console.log('Welcome in board');
+//   }
+// };
+
+// checkBaggage('I have a laptop, Food and a pocket Knife');
+// checkBaggage('I have a Socks and camera');
+// checkBaggage('I have a Socks and a gun for protection');
+
+// Split and join 
+console.log('a+very+nice+string'.split('+'));
+const [firstName, lastName] = 'Nicolas Gautier'.split(' ');
+
+const newName = ['Mr', firstName, lastName.toLocaleUpperCase()].join(' ');
+console.log(newName);
