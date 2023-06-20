@@ -163,3 +163,7 @@ const passenger2 = 'jessica ann smith davis';
 capitalizeName(passenger2);
 capitalizeName('nicolas gautier');
 
+// padding
+
+const message = 'Got to gate 23';
+console.log(message.padStart(23, '+').padEnd(35, '+'));
