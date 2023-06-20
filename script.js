@@ -167,3 +167,14 @@ capitalizeName('nicolas gautier');
 
 const message = 'Got to gate 23';
 console.log(message.padStart(23, '+').padEnd(35, '+'));
+
+// real life
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(4337846986645461));
+console.log(maskCreditCard('5466489546351651'));
